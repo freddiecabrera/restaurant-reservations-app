@@ -9,6 +9,10 @@ app.controller('resCtrl', function($scope, Services, $state) {
   $('.modal-trigger').leanModal();
   }
 
+  $scope.checkValue = (index) => {
+    console.log(index);
+  }
+
   $scope.$watch(function() {
     return Services.reservation;
   }, function(newVal, oldVal) {
@@ -28,6 +32,12 @@ app.controller('newResCtrl', function($scope, Services, $state) {
 
   $scope.submitForm = () => {
     console.log($scope.newForm);
+  }
+
+  $scope.deleteReservation = (res, id) => {
+    console.log('clicked');
+    console.log('res', res);
+    console.log('id', id);
   }
 });
 

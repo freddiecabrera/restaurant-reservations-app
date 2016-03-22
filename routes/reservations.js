@@ -31,9 +31,9 @@ router.put('/:id', function(req, res) {
 
 router.post('/', function(req, res) {
   var newRes = new Reservations();
-  newRes.time = req.body.time;
+  newRes.time = moment(req.body.time).format('MM-DD-YYYY,  h:mm a');
   newRes.patronName = req.body.patronName;
-  newRes.partySize = req.body.partySize;
+  newRes.partySize = req.body.partySize ;
   newRes.allergies = req.body.allergies;
   newRes.checkedIn = req.body.checkedIn;
   newRes.phoneNumber = req.body.phoneNumber;

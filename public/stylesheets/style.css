@@ -47,3 +47,11 @@ a {
   color: black;
 
 }
+
+.editDeleteBtn {
+  margin-left: 92%;
+}
+
+#checkBoxLabel {
+  margin-top: 10px;
+}
