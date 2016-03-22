@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var Reservations = require('../models/model.js');
+var moment = require('moment');
 
 router.get('/', function(req, res) {
   Reservations.find({}, function(err, data) {
@@ -49,5 +50,27 @@ router.delete('/:id', function(req, res) {
     res.send('Successfully deleted');
   });
 });
+
+router.get('/:id', function(req, res) {
+  Reservations.find({_id: req.params.id}, function(err, data) {
+    if(err) { return res.status(400).send(err); }
+    res.send(data);
+  });
+});
+
+router.get('/name/:patronName', function(req, res) {
+  Reservations.find({ patronName: req.params.patronName }, function(err, data) {
+    if(err) { return res.status(400).send(err); }
+    res.send(data);
+  });
+});
+
+router.get('/time/:time', function(req, res) {
+  Reservations.find({ time: req.params.time }, function(err, data) {
+    if(err) { return res.status(400).send(err); }
+    res.send(data);
+  });
+});
+
 
 module.exports = router;

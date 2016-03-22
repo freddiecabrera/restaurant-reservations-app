@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 
 var Reservation = mongoose.model('reservation',{
-  time: String,
+  time: Date,
   patronName: String,
   partySize: Number,
   allergies: Array,
