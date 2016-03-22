@@ -5,13 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+const mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/reservations';
 
 var routes = require('./routes/index');
 var reservations = require('./routes/reservations');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/reservations', function(err) {
+mongoose.connect(mongoUrl, function(err) {
   if(err){console.log(err);}
   else{console.log('connected');}
 });
