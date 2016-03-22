@@ -1,4 +1,8 @@
 'use strict';
+// $(function(){
+//   $(".button-collapse").sideNav();
+// });
+
 var app = angular.module('resApp', ['ui.router']);
 
 app.directive('repeatDone', function() {

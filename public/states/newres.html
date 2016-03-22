@@ -1,32 +1,79 @@
+<div>
+  <ul id="slide-out" class="side-nav">
+    <li><a ui-sref="reservations">Reservations</a></li>
+    <li><a ui-sref="newRes">Create New Reservation</a></li>
+  </ul>
+  <a ui="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+</div>
+
+<h1>New Reservation</h1>
+
 <div class="row">
-  <form class="col s12">
+  <form class="col s12" ng-model='newForm'>
+    <span>Date & Time</span>
     <div class="row">
       <div class="input-field col s6">
-        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-        <label for="first_name">First Name</label>
+        <input type="date" class="datepicker" placeholder="Date" ng-model='newForm.date'>
       </div>
-      <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label>
-      </div>
+      <!-- <div class="input-field col s6">
+        <input type="time" name="usr_time" ng-model='newForm.time'>
+      </div> -->
     </div>
+
     <div class="row">
       <div class="input-field col s12">
-        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-        <label for="disabled">Disabled</label>
+        <input id="fullName" type="text" class="validate" ng-model='newForm.name'>
+        <label>Full Name</label>
       </div>
     </div>
+
     <div class="row">
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
-        <label for="password">Password</label>
+        <input id="phoneNumber" type="text" class="validate" ng-model='newForm.phoneNumber'>
+        <label>Phone Number</label>
       </div>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
-      </div>
+
+    <div class="input-field col s12">
+      <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option ng-model="newForm.guests">1</option>
+        <option ng-model="newForm.guests">2</option>
+        <option ng-model="newForm.guests">3</option>
+        <option ng-model="newForm.guests">4</option>
+        <option ng-model="newForm.guests">5</option>
+        <option ng-model="newForm.guests">6</option>
+        <option ng-model="newForm.guests">7</option>
+        <option ng-model="newForm.guests">8</option>
+        <option ng-model="newForm.guests">9</option>
+        <option ng-model="newForm.guests">10</option>
+        <option ng-model="newForm.guests">11</option>
+        <option ng-model="newForm.guests">12</option>
+      </select>
+      <label>Guests</label>
     </div>
+
+    <div class="input-field col s12">
+        <select multiple>
+            <option value="" disabled selected>Choose your option</option>
+            <option ng-model="newForm.allergy ">Cow's milk</option>
+            <option ng-model="newForm.allergy ">Eggs</option>
+            <option ng-model="newForm.allergy ">Peanuts</option>
+            <option ng-model="newForm.allergy ">Shellfish</option>
+            <option ng-model="newForm.allergy ">Tree nuts</option>
+            <option ng-model="newForm.allergy ">Wheat</option>
+            <option ng-model="newForm.allergy ">Fish</option>
+            <option ng-model="newForm.allergy ">Soy</option>
+            <option ng-model="newForm.allergy ">Gluten</option>
+        </select>
+        <label>Allergies</label>
+    </div>
+
+    <div class="col s2" ng-click='submitForm()'>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+
   </form>
 </div>
